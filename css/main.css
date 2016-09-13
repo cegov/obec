@@ -16,15 +16,10 @@ body{
 .scroll-fake{
 	height: 100vh;
 	max-height: 100%;
-	position: absolute;
+	position: fixed;
 	top: 0px;
-	border-left: 8px solid black;
-}
-.scroll-fake.left{
-	left: 0px;
-}
-.scroll-fake.right{
 	right: 0px;
+	border-left: 8px solid black;
 }
 /* scroll */
 ::-webkit-scrollbar-track {
@@ -118,12 +113,13 @@ body{
 /* navegação horizontal */
 .nav-x{
 	transition: 1s all ease-in-out;
+	z-index: 9999999999;
 }
 .nav-x-left{
 	position: absolute;
 	transform: translateX(-50%);
 	left: 20%;
-	top: 110px;
+	top: 200px;
 	z-index: 1000;
 	width: 295px;
 	text-align: center;
@@ -132,15 +128,16 @@ body{
 	position: absolute;
 	transform: translateX(-50%);
 	left: 80%;
-	top: 110px;
+	top: 200px;
 	z-index: 1000;
-	width: 295px;
+	width: 300px;
 	text-align: center;
 }
 .nav-x-center{
 	position: absolute;
 	left: 50%;
-	top: 195px;
+	top: 150px;
+	width: 300px;
 	transform: translateX(-50%);
 	z-index: 2000;
 }
@@ -152,8 +149,8 @@ body{
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-position: center;
-	width: 50px;
-	height: 50px;
+	width: 70px;
+	height: 70px;
 	cursor: pointer;
 }
 
@@ -214,7 +211,6 @@ body{
 	top: 50%;
 	transform: translateY(-50%);
 	overflow-y: scroll;
-	direction: rtl;
 	margin-top: 50px;
 }
 .lateral-align-vert-right{
@@ -232,6 +228,7 @@ body{
 .lateral-align-horzt{
 	margin: auto;
 	direction: ltr;
+	width: 90%;
 }
 /*==== PÁGINA INICIAL ================*/
 .inicio-wrap{
@@ -256,20 +253,31 @@ body{
 }
 /* Titulo seções */
 .titulo-lat{
-	text-align: center;
-	padding-left: 15px;
 	display: inline-block;
-	background-color: #f1b504; 
-	color: white;
+	width: 100%;
+	height: 32px;
+	padding-left: 15px;
 	font-family: 'Lato Regular';
 	font-size: 13pt;
 	font-weight: bold;
 	line-height: 32px;
 	letter-spacing: 15px;
+	text-align: center;
 	box-shadow: 5px 5px 10px #000;
+	background-color: #f1b504; 
+	color: white;
 	transition: .2s all ease-in-out;
 	cursor: pointer;
-	z-index: 1000;
+	z-index: 1000;	
+}
+.sub-nav-x{
+	width: 143px;
+	z-index: 9999999;
+}
+.sub-titulo-lat{
+	font-size: 7pt;
+	letter-spacing: 7px;
+	padding-left: 7px;
 }
 /* Info */
 .texto-sobre{
@@ -570,6 +578,12 @@ body{
 	box-shadow: 5px 5px 10px #000;
 	transition: .2s all ease-in-out;
 	cursor: pointer;
+}
+.pub-button a{
+	color: white;
+}
+.pub-button a:hover{
+	text-decoration: none;
 }
 /* setas direcionais */
 .seta-esquerda:before {

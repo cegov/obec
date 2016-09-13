@@ -69,22 +69,22 @@ $( document ).ready(function() {
 		});
 
 		/*=== Altera posição dos títulos ===*/
-		if (larguraTela>767 && alturaTela>767){
-			$('.nav-x').show();
-			$('.nav-x-left').css('left','50%');	
-			$('.nav-x-right').animate({ left: '100%' }, 1000, function(){
-				$('.nav-x-right').hide();
-			});	
-		}else{
-			$('.nav-x').show();
-			$('.nav-x-left').css('top','50px');	
-			$('.nav-x-center').css('top','110px');
-			$('.nav-x-right').css('top','0px');
-			$('.nav-x-right').hide();
-			$('.site').css('overflow','hidden');
-		}
-		$('.nav-x-center').css('left','90%');
-		
+		$('.nav-x').show();
+
+		$('.nav-x').removeAttr('style');
+		$('.nav-x').removeClass('title-nav-x');
+		$('.nav-x').removeClass('sub-nav-x');
+		$('.nav-x').find('.titulo-lat').removeClass('sub-titulo-lat');
+
+
+		$('.nav-x-left').css('left','50%');	
+		$('.nav-x-left').addClass('title-nav-x');
+
+		$('.nav-x-center').addClass('sub-nav-x');
+		$('.nav-x-center').find('.titulo-lat').addClass('sub-titulo-lat');
+
+		$('.nav-x-right').addClass('sub-nav-x');
+		$('.nav-x-right').find('.titulo-lat').addClass('sub-titulo-lat');
 
 		/*=== Esconde seta ===*/
 		$('.arrow-nav').hide();
@@ -100,7 +100,8 @@ $( document ).ready(function() {
 		});
 		$('.lateral-proj').css('background-color', 'rgba(0, 0, 0, 0.6)');
 
-		$('body').scrollTop(0);		
+		$('body').scrollTop(0);	
+		$('.site').css('overflow','hidden');	
 	
 	});
 
@@ -125,22 +126,17 @@ $( document ).ready(function() {
 		});
 
 		/*=== Altera posição dos títulos ===*/
-		if (larguraTela>767 && alturaTela>767){
-			$('.nav-x').show();
-			$('.nav-x-left').css('left','20%');	
-			$('.nav-x-center').css('left','50%');
-			$('.nav-x-right').css('left','80%');
-		}else{
-			$('.nav-x').show();
-			$('.nav-x-left').css('top','180px');	
-			$('.nav-x-center').css('top','300px');
-			$('.nav-x-center').css('left','50%');
-			$('.nav-x-right').css('top','245px');
-			$('.site').css('overflow','visible');
-		}
+		$('.nav-x-center').css('left','50%');
+		$('.nav-x-center').addClass('title-nav-x');	
+
+		$('.nav-x').removeAttr('style');
+		$('.nav-x').removeClass('title-nav-x');
+		$('.nav-x').removeClass('sub-nav-x');
+		$('.nav-x').find('.titulo-lat').removeClass('sub-titulo-lat');
 
 		/*=== Mostra seta ===*/
 		$('.arrow-nav').show();
+		$('.site').css('overflow','visible');
 
 		/* projetos */
 		$('.lateral-proj').css('background-color', 'transparent');
@@ -166,26 +162,37 @@ $( document ).ready(function() {
 			$(this).parents('.container-laterais').find('.lateral-left').hide();
 		});
 
-		/*=== Altera posição dos títulos ===*/
-		if (larguraTela>767 && alturaTela>767){
-			$('.nav-x').show();
-			$('.nav-x-center').css('left','10%');
-			$('.nav-x-right').css('left','50%');
-			$('.nav-x-left').animate({ left: '-20%' }, 150, function(){
-				$('.nav-x-left').hide();
-			});	
-		}else{
-			$('.nav-x').show();	
-			$('.nav-x-right').css('top','50px');
-			$('.nav-x-center').css('top','110px');
-			$('.nav-x-center').css('left','10%');
-			$('.nav-x-left').css('top','110px');
-			$('.nav-x-left').hide();
-			$('.site').css('overflow','hidden');
-		}					
+		/*=== Altera posição dos títulos ===*/		
+		$('.nav-x').show();
+		
+		$('.nav-x').removeAttr('style');
+		$('.nav-x').removeClass('sub-nav-x');
+		$('.nav-x').removeClass('title-nav-x');
+		$('.nav-x').find('.titulo-lat').removeClass('sub-titulo-lat');
+
+
+		$('.nav-x-right').css('left','50%');	
+		$('.nav-x-right').addClass('title-nav-x');	
+
+		$('.nav-x-center').addClass('sub-nav-x');
+		$('.nav-x-center').find('.titulo-lat').addClass('sub-titulo-lat');
+
+		$('.nav-x-left').addClass('sub-nav-x');
+		$('.nav-x-left').find('.titulo-lat').addClass('sub-titulo-lat');
 
 		/*=== Esconde seta ===*/
 		$('.arrow-nav').hide();
+
+		$('.lateral-proj').css('background-color', 'rgba(0, 0, 0, 0.6)');
+		$('body').scrollTop(0);	
+		$('.site').css('overflow','hidden');
+	});
+
+	/* */
+	/*========= Fim navegação lateral do site ========*/
+
+	/* ======== PROJETOS  ================*/
+	$('.open-projetos').click(function(event){
 
 		/* Página de projetos */ /* Ajusta a altura dos projetos, para que as transições funcionem */
 		$('.pesquisa-content').each(function( index ) {
@@ -196,13 +203,7 @@ $( document ).ready(function() {
 		   	$(this).height(curHeight).animate({height: autoHeight}, 50);
 
 		});
-		$('.lateral-proj').css('background-color', 'rgba(0, 0, 0, 0.6)');
-
-		$('body').scrollTop(0);	
 	});
-
-	/* */
-	/*========= Fim navegação lateral do site ========*/
 
 	/*========= Info Projetos -> Pesquisa ========*/
 	/* Mostra info do projeto */
@@ -279,6 +280,7 @@ $( document ).ready(function() {
 			containerWidth = 0;
 
 		});
+
 	});
 
 	/* move publicações para a direita */
@@ -340,6 +342,7 @@ $( document ).ready(function() {
 	function closePub(obj){
 		
 		var projeto = $(obj).parents('.wrap-pub'),
+			containerPub = $(obj).parents('.container-pub'),
 			publicacao = $(obj).parents('.publicacao-content');
 
 		/* remove classe que redimensiona a imagem */
@@ -351,6 +354,8 @@ $( document ).ready(function() {
 		$(projeto).removeClass('opened');
 		$(publicacao).removeClass('opened');
 		$(publicacao).parents('.container-pub').removeClass('opened');
+
+		$(containerPub).height('225px');
 
 		/* abre todas as outras publicações */
 		$(publicacao).siblings('.publicacao-content').css('width','170px').css('padding','10px');
@@ -368,6 +373,7 @@ $( document ).ready(function() {
 
 		/* define objetos */
 		var projeto = $(this).parents('.wrap-pub'),
+			containerPub = $(this).parents('.container-pub'),
 			publicacao = $(this).parents('.publicacao-content');
 		
 		/* verifica se publicação está aberta ou fechada */
@@ -384,13 +390,27 @@ $( document ).ready(function() {
 			/* ajusta largura e altura da publicação */
 			$(projeto).addClass('opened');
 			$(publicacao).addClass('opened');
-			$(publicacao).parents('.container-pub').addClass('opened');
+			$(containerPub).addClass('opened');
+
+			/* Página de projetos */ /* Ajusta a altura dos projetos, para que as transições funcionem */
+			$(containerPub).find('.publicacao-content.opened').each(function( index ) {
+
+			    var curHeight = $(this).height(),
+			   		autoHeight = $(this).css('height', 'auto').height();
+
+			   	$(containerPub).height(curHeight).animate({height: autoHeight}, 50);
+
+			});
 
 			/* fecha todos as outras publicações */
 			$(publicacao).siblings('.publicacao-content').css('width','0px').css('padding','0px');
 
 			/* volta rolagem para posição inicial */
-			$(publicacao).parents('.container-pub').css('marginLeft','0px');
+			$(containerPub).css('marginLeft','0px');
+			$(projeto).siblings('.left-move').css({ 'background-image': 'none', 'cursor': 'auto'});
+			if(containerPub.width()>projeto.width()){
+				$(projeto).siblings('.right-move').removeAttr('style');
+			}
 			
 			/* setas direcionais desaparecem */			
 			$(projeto).siblings('.left-move').hide();
@@ -411,6 +431,10 @@ $( document ).ready(function() {
 		$('.pub-content-img').each(function( index ) {
 			closePub(this);		
 		});
+
+		$('.nav-x').removeClass('sub-nav-x');
+		$('.nav-x').removeClass('title-nav-x');
+		$('.nav-x').find('.titulo-lat').removeClass('sub-titulo-lat');
 
 	});
 });
