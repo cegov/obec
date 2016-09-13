@@ -31,7 +31,7 @@
 	height: 100vh;	
 }
 #pagina-sobre{
-	height: 1220px;
+	height: 1325px;
 }
 #pagina-projetos{
 	height: 1185px;
@@ -69,47 +69,28 @@
 /* Alinha lateral verticalmente */
 .lateral-align-vert-left{
 	height: 65vh;
-	margin-top: 150px;
+	margin-top: 75px;
 	transform: none;
 	top: 0px;
 }
 .lateral-align-vert-right{
 	height: 65vh;
-	margin-top: 150px;
+	margin-top: 75px;
 	transform: none;
 	top: 0px;
 }
 
 /* Navegação */
 .nav-x-center{
-	top: 140px;
-	width: 400px;
-}
-.nav-x-left,.nav-x-right{
-	width: 190px;
-	top: 190px;
-}
-.right-button .titulo-lat, .left-button .titulo-lat{
-	font-size: 9pt;
-	letter-spacing: 9px;
-	padding-left: 9px;
+	top: 300px;
 }
 .nav-x-left{
-	left: 50%;
-	transform: translateX(-105%);
+	top: 180px;
+	left: 50% !important;
 }
 .nav-x-right{
-	left: 50%;
-	transform: translateX(5%);
-}
-.nav-x.sub-nav-x{
-	top: 90px;
-	width: 190px;
-}
-.nav-x.title-nav-x{
-	transform: translateX(-50%);
-	top: 140px;
-	width: 400px;
+	top: 245px;
+	left: 50% !important;
 }
 
 /*==== PÁGINA INICIAL ================*/
@@ -157,7 +138,7 @@
 }
 /* Info */
 .texto-sobre{
-	padding-top: 125px;
+	padding-top: 210px;
 }
 .video-sobre{
 	padding: 20px 0px;
@@ -183,7 +164,7 @@
 }
 /*=== PROJETOS ============*/
 .texto-projetos{
-	padding-top: 135px;
+	padding-top: 220px;
 	padding-bottom: 20px;
 }
 .pesquisa-container{
@@ -199,7 +180,7 @@
 }
 /*=== ACERVO ============*/
 .texto-acervo{
-	padding-top: 135px;
+	padding-top: 220px;
 	padding-bottom: 20px;
 }
 .video-content{
@@ -262,23 +243,7 @@
 	.pagina-content-lateral{
 		width: 300px;
 	}
-	.nav-x-center{
-		width: 300px;
-	}
-	.nav-x-left,.nav-x-right{
-		width: 140px;
-		top: 190px;
-	}
-	.nav-x.sub-nav-x{
-		width: 140px;
-	}
-	.nav-x.title-nav-x{
-		width: 300px;
-	}
-	.right-button .titulo-lat, .left-button .titulo-lat{
-		letter-spacing: 4px;
-		padding-left: 4px;
-	}
+
 	/* sobre */
 	#pagina-sobre{
 		height: 1450px;
